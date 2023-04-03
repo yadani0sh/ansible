@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh "mvn clean -f ansible"
+                sh "mvn clean"
             }
         }
         stage ('Test') {
             steps {
-                sh "mvn test -f ansible"
+                sh "mvn test"
             }
         }
         stage ("Deploy") {
             steps {
-                sh "mvn package -f ansible"
+                sh "mvn package"
             }
         }
     }
